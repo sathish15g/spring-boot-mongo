@@ -1,0 +1,11 @@
+---
+applications:
+- name: catalog-Service
+  instances: 1
+  host: catalog-service
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  path: target/spring-boot-mongo-0.0.1-SNAPSHOT.jar
+  memory: 750M
+  services:  - Mongo-DB
+  env:
+    SPRING_PROFILES_ACTIVE: default
